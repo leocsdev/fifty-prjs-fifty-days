@@ -44,15 +44,29 @@ body {
   left: 1.2rem;
   margin: 0;
 
-  /* hidden by default */
+  /* hide h3 by default */
   opacity: 0;
 }
 
+/* maximize image width if active */
 .panel.active {
-  /* maximize image width if active */
   flex: 5;
 }
 
+/* show h3 when active */
 .panel.active h3 {
   opacity: 1;
+}
+
+
+@media (max-width: 539px) {
+  .container {
+    width: 100vw;
+  }
+
+  /* show only 3 panels */
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
 }
