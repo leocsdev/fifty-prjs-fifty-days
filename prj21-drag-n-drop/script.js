@@ -14,25 +14,49 @@ for(const empty of empties) {
 }
 
 function dragStart() {
-  console.log('drag Start');
+  // console.log('drag Start');
+
+  // add hold class to draggable item
+  this.className += ' hold';
+
+  // set the container div to invisible
+  setTimeout(() => this.className = 'invisible', 0);
 }
 
 function dragEnd() {
-  console.log('drag End');
+  // console.log('drag End');
+
+
+  this.className = 'fill';
 }
 
-function dragOver() {
-  console.log('drag Over');
+function dragOver(e) {
+  // console.log('drag Over');
+  
+  // stop default dragover behavior
+  e.preventDefault();
+  
 }
 
-function dragEnter() {
-  console.log('drag Enter');
+function dragEnter(e) {
+  // console.log('drag Enter');
+
+  // stop default dragenter behavior
+  e.preventDefault();
+
+  this.className += ' hovered';
 }
 
 function dragLeave() {
-  console.log('drag Leave');
+  // console.log('drag Leave');
+  
+  this.className = 'empty';
 }
 
 function dragDrop() {
-  console.log('drag Drop');
+  // console.log('drag Drop');
+
+  this.className = 'empty';
+
+  this.append(fill)
 }
